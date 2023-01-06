@@ -10,6 +10,8 @@ This project allows an Arduino Nano to arm a DJI 03 Air Unit based on the output
 5. When the Arm Channel goes above 1500 (above 50%) the DJI air unit will arm.
 
 *Please note that the DJI Air Unit must be fully powered on and connected to the Goggles before you give it the arm signal. 
- 
+
+**Caution:**
+Please make sure that only 5v is being supplied to the Arduino Nano.  The below wiring diagram assumes the receiver is powered from a 5v BEC.  If the receiver is powered by a different or unregulated voltage then you will need to provide a 5v BEC between the main battery and the Arduino Nano. 
 
 ![Arduino DJI 03 RC ARM Wiring](https://i.imgur.com/l8pAnhi.jpg)
