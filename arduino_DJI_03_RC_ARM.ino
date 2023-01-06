@@ -76,11 +76,11 @@ void loop() {
   if (rcInput > 1500) {
     flightModeFlags = 0x00000003;    // armed 
     Serial.println(": Armed");
-    digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+    digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on 
   } else {
     flightModeFlags = 0x00000002;    // disarmed
     Serial.println(": Disarmed");
-    digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+    digitalWrite(LED_BUILTIN, LOW);    // turn the LED off 
   }
 
   status_DJI.flightModeFlags = flightModeFlags;
