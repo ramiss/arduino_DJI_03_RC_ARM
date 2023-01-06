@@ -42,8 +42,6 @@ msp_status_DJI_t status_DJI = { 0 };
 
 volatile unsigned int rcInput;    /* each signal requires a variable */
 
-bool doneOnce = false;
-
 void setup() {
   //  Start USB Serial
   Serial.begin(115200);
