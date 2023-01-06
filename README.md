@@ -4,7 +4,7 @@ This project allows an Arduino Nano to arm a DJI 03 Air Unit based on the output
 
 **Instructions:**
 1. Complete the wiring per below.
-2. Install the following Libraries in Arduiono IDE:
+2. Install the following Libraries in Arduino IDE:
    - AltSoftSerial by Paul Stroffregen V1.4
    - ReefwingMSP by David Such V2.0.0
    - PulseInput by RCMags V1.0.0 (also install any dependencies)
