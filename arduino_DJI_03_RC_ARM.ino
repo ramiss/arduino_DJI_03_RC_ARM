@@ -22,12 +22,12 @@ msp_fc_variant_t variant;
 AltSoftSerial SerialMSP;
 
 // DJI STUFF
-// MSP_STATUS_DJI reply
+// MSP_STATUS_DJI
 struct msp_status_DJI_t {
   uint16_t cycleTime;
   uint16_t i2cErrorCounter;
-  uint16_t sensor;                    // MSP_STATUS_SENSOR_...
-  uint32_t flightModeFlags;           // see getActiveModes()
+  uint16_t sensor;                    
+  uint32_t flightModeFlags;           
   uint8_t  configProfileIndex;
   uint16_t averageSystemLoadPercent;  // 0...100
   uint16_t armingFlags;   //0x0103 or 0x0301
