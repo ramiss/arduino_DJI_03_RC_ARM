@@ -13,6 +13,7 @@
 #include <PulseInput.h>   
 
 ReefwingMSP msp;
+#define MSP_STATUS_EX            150   //out message		 For OSD ‘Fly mode', For OSD ‘Disarmed’
 
 msp_api_version_t api;
 msp_ident_t identReply;
