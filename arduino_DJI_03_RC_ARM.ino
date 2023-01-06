@@ -1,5 +1,5 @@
 /******************************************************************
-  @file       arduino_RC_MSP_ARM.ino
+  @file       arduino_DJI_03_RC_ARM.ino
   @brief      Send DJI Arm or Disarm over MSP based on RC Input. 
   @author     Richard Amiss
   
