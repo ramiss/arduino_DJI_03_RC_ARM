@@ -18,4 +18,11 @@ This project allows an Arduino Nano to arm a DJI 03 Air Unit based on the output
 **Caution:**
 Please make sure that only 5v regulated is being supplied to the Arduino Nano.  The below wiring diagram assumes the receiver is powered from a 5v BEC/UBEC.  If the receiver is powered by a different or unregulated voltage then you will need to provide a 5v UBEC between the main battery and the Arduino Nano (and sever the positive wire between the ARM plug and the Arduino), or provide between 7v to 12v via the Arduino's VIN pin.
 
-![Arduino DJI 03 RC ARM Wiring](https://i.imgur.com/l8pAnhi.jpg)
+**Voltage reading:**  
+
+Add a voltage divider between supply and ground, highest resistance value towards positive (R1), middle going to A1.  
+Choose resistors in the tens of kiloohms range, with a ratio appropriate for the intended supply voltage.  
+e.g. R1=33k, R2=11k, ratio of 4, measurement range 20V (5V Arduino reference * 4)  
+Set VOLT_DIVIDER to 1024/measurement range e.g. 1024/20 = 51, then adjust as necessary if not precise enough.  
+
+![Arduino DJI 03 RC ARM Wiring](https://i.imgur.com/xA4NjEI.png)

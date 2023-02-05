@@ -12,8 +12,12 @@
 #include <ReefwingMSP.h>
 #include <PulseInput.h>   
 
+#define ANALOG_IN                A1
+#define VOLT_DIVIDER             51    // Set to 1024/full scale voltage
+
 ReefwingMSP msp;
 #define MSP_STATUS_EX            150   //out message		 For OSD ‘Fly mode', For OSD ‘Disarmed’
+#define MSP_BATTERY_STATE        130
 
 msp_api_version_t api;
 msp_ident_t identReply;
@@ -37,8 +41,19 @@ struct msp_status_DJI_t {
   uint32_t djiPackArmingDisabledFlags; //(1 << 24)
 } __attribute__ ((packed));
 
+struct msp_status_battery_t {
+  uint8_t  cellCount;       // 0 = no battery
+  uint16_t capacity;        // in mAh
+  uint8_t  legacyVoltage;   // in 0.1V       
+  uint16_t mAhDrawn;           
+  uint16_t current;         // in 0.01A
+  uint8_t  alertFlags;
+  uint16_t voltage;         // in 0.01V
+} __attribute__ ((packed));
+
 uint32_t flightModeFlags = 0x00000002;
 msp_status_DJI_t status_DJI = { 0 };
+msp_status_battery_t status_batt = { 0 };
 
 volatile unsigned int rcInput;    /* each signal requires a variable */
 
@@ -87,6 +102,9 @@ void loop() {
   msp.send(MSP_STATUS_EX, &status_DJI, sizeof(status_DJI));
   status_DJI.armingFlags = 0x0000;
   msp.send(MSP_STATUS, &status_DJI, sizeof(status_DJI));  
+
+  status_batt.legacyVoltage = analogRead(ANALOG_IN)*10/VOLT_DIVIDER;
+  msp.send(MSP_BATTERY_STATE, &status_batt, sizeof(status_batt));
 
   delay(100);
 }
