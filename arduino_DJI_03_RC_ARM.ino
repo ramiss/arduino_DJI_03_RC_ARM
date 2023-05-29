@@ -4,8 +4,8 @@
   @author     Richard Amiss
   
   Code:        Richard Amiss
-  Version:     1.0.1
-  Date:        01/06/23
+  Version:     1.0.2
+  Date:        05/29/23
 ******************************************************************/
 
 #include <AltSoftSerial.h>
