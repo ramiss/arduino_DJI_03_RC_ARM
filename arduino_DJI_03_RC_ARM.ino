@@ -19,6 +19,8 @@ ReefwingMSP msp;
 #define MSP_STATUS_EX            150   //out message		 For OSD ‘Fly mode', For OSD ‘Disarmed’
 #define MSP_BATTERY_STATE        130
 
+bool always_arm = false;          // set this to true to ignore RC input and continue sending the arm signal.
+
 msp_api_version_t api;
 msp_ident_t identReply;
 msp_packet_t packet;
@@ -87,7 +89,7 @@ void loop() {
   // poll rcInput
   Serial.print(rcInput);
 
-  if (rcInput > 1500) {
+  if (rcInput > 1500 || always_arm) {
     flightModeFlags = 0x00000003;    // armed 
     Serial.println(": Armed");
     digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on 
