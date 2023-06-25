@@ -31,7 +31,7 @@ CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
 
 #define ANALOG_IN                A0    // Voltage Read pin (notice this is now Pin 0, instead of Pin 1)
 #define VOLT_DIVIDER             48    // Set to 1024/full scale voltage
-#define DEBUG                          //uncomment to see diagnostics from USB serial
+//#define DEBUG                          //uncomment to see diagnostics from USB serial
 
 #define FC_FIRMWARE_NAME          "Betaflight"
 #define FC_FIRMWARE_IDENTIFIER    "BTFL"
@@ -79,7 +79,7 @@ msp_analog_t analog = { 0 };
 void setup() {
   #ifdef DEBUG
     SerialUSB.begin(115200);
-    while (!SerialUSB);
+    //while (!SerialUSB);
   #endif
   Serial1.begin(115200);
   while (!Serial1);
