@@ -1,4 +1,4 @@
-# Arduino DJI 03 RC ARM
+# Arduino DJI 03 RC ARM V2
 
 This project allows an Arduino XIAO Seeeduino to arm a DJI 03 Air Unit automatically once powered up, and as long as the Goggles are powered up. The intent of which is to allow the full power of the DJI 03 Air Unit to activate without having to use a flight controller.
 
@@ -21,4 +21,4 @@ Choose resistors in the tens of kiloohms range, with a ratio appropriate for the
 e.g. R1=33k, R2=5.1k, ratio of 6.471, measurement range 21.3V (3.3V Arduino reference * 6.471)  
 Set VOLT_DIVIDER to 1024/measurement range e.g. 1024/21.3 = 48, then adjust as necessary if not precise enough.  
 
-![Arduino DJI 03 RC ARM Wiring](https://imgur.com/a/sBggj8k)
+![Arduino DJI 03 RC ARM Wiring](https://i.imgur.com/88jpdS7.png)
