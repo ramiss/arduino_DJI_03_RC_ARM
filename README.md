@@ -7,10 +7,11 @@ Note that this project no longer uses an RC channel to arm, although that featur
 **Instructions:**
 1. Complete the wiring per below.
 2. Download this entire repository, including the MSP library files, which have been modified for this application.
-3. [Upload the arduino_DJI_03_RC_ARM.ino sketch to the Arduino](https://support.arduino.cc/hc/en-us/articles/4733418441116-Upload-a-sketch-in-Arduino-IDE).
-4. Power on your goggles.
-5. Power on the aircraft.
-6. Two seconds after the Air Unit has powered up, it will arm. 
+3. Note: When installing the Seeeduino board in the IDE, choose/downgrade to version 1.7.9. They changed something with SerialUSB that breaks the code after that, I will fix in a future release.
+4. [Upload the arduino_DJI_03_RC_ARM.ino sketch to the Arduino](https://support.arduino.cc/hc/en-us/articles/4733418441116-Upload-a-sketch-in-Arduino-IDE).
+5. Power on your goggles.
+6. Power on the aircraft.
+7. Two seconds after the Air Unit has powered up, it will arm. 
 
 **Caution:**
 Please make sure that no more than 5v regulated is being supplied to the Arduino XIAO Seeeduino.  The below wiring diagram assumes the receiver is powered from a 5v BEC/UBEC.  If the receiver is powered by a different or unregulated voltage then you will need to provide a 5v UBEC between the main battery and the Arduino and remove the connection to the receiver.
