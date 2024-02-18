@@ -21,7 +21,7 @@ Please make sure that no more than 5v regulated is being supplied to the Arduino
 **Voltage reading (optional):**  
 Add a voltage divider between supply and ground, highest resistance value towards positive (R1), middle going to A0.  
 Choose resistors in the tens of kiloohms range, with a ratio appropriate for the intended supply voltage.  
-e.g. R1=33k, R2=5.1k, ratio of 6.471, measurement range 21.3V (3.3V Arduino reference * 6.471)  
-Set VOLT_DIVIDER to 1024/measurement range e.g. 1024/21.3 = 48, then adjust as necessary if not precise enough.  
+e.g. R1=33k, R2=5.1k, ratio of 7.471 ((33+5.1)/5.1), measurement range 24.7V (3.3V Arduino reference * 7.471)  
+Set VOLT_DIVIDER to 4096/measurement range e.g. 4096/24.7 = 166, then adjust as necessary if not precise enough.  
 
 ![Arduino DJI 03 RC ARM Wiring](https://i.imgur.com/88jpdS7.png)
