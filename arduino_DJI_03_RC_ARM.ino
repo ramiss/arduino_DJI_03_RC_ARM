@@ -30,7 +30,7 @@ CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
 #include "OSD_positions_config.h"
 
 #define ANALOG_IN                A0    // Voltage Read pin (notice this is now Pin 0, instead of Pin 1)
-#define VOLT_DIVIDER             48    // Set to 1024/full scale voltage
+#define VOLT_DIVIDER             48    // Set to 4096/full scale voltage
 //#define DEBUG                          //uncomment to see diagnostics from USB serial
 
 #define FC_FIRMWARE_NAME          "Betaflight"
